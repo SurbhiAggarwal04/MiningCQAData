@@ -1,0 +1,8 @@
+% Description: This function generates random 10000 numbers out of the given data file.
+function [O] = genrandom(A)
+nodata = 10000;
+perm=randperm(size(A,1));
+data = reshape(A(perm,:),size(A));
+O = data((1:nodata),:);
+xlswrite('\random_1.xlsx',O);
+end
